@@ -1,0 +1,30 @@
+<section>
+<article>
+  <h2>Criando DropDown para seleção de alertas()</h2>
+  <div>
+    Selecione a classe de alerta:
+    <select #Alertas (change)="0">
+      <option value="alert-success">Sucesso</option>
+      <option value="alert-info">Info</option>
+      <option value="alert-warning">Alerta</option>
+      <option value="alert-danger">Erro</option>
+    </select>
+    <br><br>
+    <div class="alert {{ Alertas.value }}" role="alert">
+      Mudança da cor sempre que uma alerta for selecionado.
+    </div>
+      <div class="alert" role="alert"
+      [class.alert-success]="Alertas.value == 'alert-success'">Sucesso</div>
+      <div class="alert" role="alert"
+      [class.alert-info]="Alertas.value == 'alert-info'">Info</div>
+      <div class="alert" role="alert"
+      [class.alert-warning]="Alertas.value == 'alert-warning'">Alerta</div>
+      <div class="alert" role="alert"
+      [class.alert-danger]="Alertas.value == 'alert-danger'">Erro</div>
+
+      <div class="alert alert-danger" role="alert"
+      [style.display]="Alertas.value == 'alert-danger' ? 'block': 'none'">
+      Esse texto aparecera somente no caso de erro</div>
+  </div>
+</article>
+</section>
